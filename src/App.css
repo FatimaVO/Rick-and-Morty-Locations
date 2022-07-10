@@ -1,0 +1,285 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.App {
+  text-align: center;
+}
+
+header {
+  background-image: url(./assets/images/headerImage.jpg);
+  height: 318px;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.titleImage {
+  width: 380px;
+  height: auto;
+}
+
+.inputAndButton {
+  width: 100%;
+  padding-bottom: 30px;
+}
+
+input {
+  width: 65%;
+  height: 40px;
+  outline: none;
+  border: 0;
+  padding-left: 10px;
+  font-size: 16px;
+}
+
+input::placeholder {
+  font-size: 16px;
+  height: 100%;
+}
+
+button {
+  width: 60px;
+  height: 42px;
+  background-color: #854e45;
+  color: #ffffff;
+  outline: none;
+  border: solid #5f3932 2px;
+  font-size: 18px;
+}
+
+button:hover{
+  cursor: pointer;
+  background-color: #b1685d ;
+  font-size: 20px;
+}
+
+.locationContainer {
+  padding: 30px 0;
+  background-color: #412718;
+  height: 100%;
+  color: #DCE2E6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.locationInfo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  margin-top: 30px;
+}
+
+.locationName {
+  max-width: 300px;
+}
+
+
+.type,
+.population {
+  width: 150px;
+  margin: 10px;
+}
+
+.dimension {
+  width: 220px;
+  margin: 10px;
+}
+
+
+.residentsContainer {
+  background-color: #412718;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.residentInfo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 400px;
+  height: 180px;
+  background-color: #311e12;
+  color: #DCE2E6;
+  border-radius: 20px;
+  overflow: hidden;
+  margin: 20px;
+}
+
+.residentImg {
+  width: 180px;
+  height: auto;
+}
+
+.residentDescription {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: left;
+  text-align: left;
+  width: 60%;
+  gap: 5px;
+  padding-left: 15px;
+  padding: 20px;
+}
+
+.residentName {
+  margin-bottom: 5px;
+}
+
+.statusInfo {
+  display: grid;
+  justify-items: start;
+  align-items: center;
+  grid-template-columns: 20px 150px;
+  font-size: 15px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+
+.origin {
+  text-align: left;
+}
+
+.origin p,
+.episodes p {
+  font-size: 12px;
+}
+
+.origin b,
+.episodes b {
+  font-size: 13px;
+}
+
+.statusIndicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.zeroResidents {
+  background-color: #412718;
+  height: 400px;
+  text-align: right;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.nobodyText {
+  width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 30px;
+  margin: 30px auto;
+  margin-top: 10px;
+  font-family: 'Space Mono', monospace;
+  border-right: 0.15em solid #18bdec;
+  animation: typing 4s steps(38) 1s 1 normal both, blink 1s steps(1) infinite;
+}
+
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+
+.gun {
+  height: 150px;
+  width: auto;
+  margin-bottom: 30px;
+}
+
+
+
+
+@media only screen and (max-width: 430px) {
+
+  .titleImage {
+    width: 280px;
+    height: auto;
+  }
+
+  .residentInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 250px;
+    height: 480px;
+  }
+
+  .residentImg {
+    width: 250px;
+    height: auto;
+  }
+
+  .residentDescription {
+    width: 90%;
+    padding-bottom: 60px;
+  }
+
+  input {
+    font-size: 14px;
+  }
+
+  input::placeholder {
+    font-size: 14px;
+  }
+
+  .nobodyText {
+    width: 0;
+    font-size: 18px;
+    margin: 20px auto;
+    margin-top: 0;
+  }
+
+  .zeroResidents {
+    height: 300px;
+  }
+
+  .statusInfo {
+    margin-top: 8px;
+    margin-bottom: 8px;
+  }
+  
+}
