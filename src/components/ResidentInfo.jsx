@@ -2,15 +2,15 @@ import React from 'react';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 
-const ResidentInfo = ({ residentUrl }) => {
+const ResidentInfo = ({residentUrl}) => {
 
-    const [residentInfo, setResidentInfo] = useState({})
+    const [residentInfo, setResidentInfo] = useState ({})
 
-    useEffect(() => {
+    useEffect(() =>{
         axios.get(residentUrl)
-            .then(res => setResidentInfo(res.data))
+        .then(res => setResidentInfo(res.data))
 
-    }, [])
+    },[])
 
     let color = residentInfo.status === "Alive" ? 'green' : (residentInfo.status === "Dead" ? 'red' : 'gray');
 
@@ -20,10 +20,10 @@ const ResidentInfo = ({ residentUrl }) => {
     return (
         <div className='residentInfo'>
             <img className='residentImg' src={residentInfo.image} alt="" />
-            <div className="residentDescription">
+            <div className= "residentDescription">
                 <h3 className='residentName'>{residentInfo.name}</h3>
                 <div className='statusInfo'>
-                    <div className='statusIndicator' style={{ background: color }}></div>
+                    <div className='statusIndicator' style={{background: color }}></div>
                     <p className='statusSpecieText'>{residentInfo.status}{" - "}{" "}{residentInfo.species}</p>
                 </div>
                 <div className='origin'>

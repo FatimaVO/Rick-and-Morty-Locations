@@ -10,11 +10,15 @@ function App() {
 
   const [location, setLocation] = useState({});
   const [searchValue, setSearchValue] = useState("")
+  const [isLoading, setIsLOading] = useState(true)
 
   useEffect(() => {
     const random = Math.floor(Math.random() * 126) + 1
     axios.get(`https://rickandmortyapi.com/api/location/${random}`)
-      .then(res => setLocation(res.data));
+      .then(res => {
+        setLocation(res.data)
+      })
+      .finally(() => setIsLOading(false))
   }, [])
 
   const searchLocation = () => {
@@ -47,13 +51,20 @@ function App() {
       </header>
       <Locations location={location} />
       <div>
-        <ul className='residentsContainer'>
-          {zeroResidents()}
-          {location.residents?.map(residentUrl => (
-            <ResidentInfo residentUrl={residentUrl} key={residentUrl} />
-          ))
-          }
-        </ul>
+        {isLoading ?
+          <div className='loading'>
+            <span className="loader"></span></div> : (
+            <>
+              <ul className='residentsContainer'>
+                {zeroResidents()}
+                {location.residents?.map(residentUrl => (
+                  <ResidentInfo residentUrl={residentUrl} key={residentUrl} />
+                ))
+                }
+              </ul>
+            </>
+          )
+        }
       </div>
     </div>
   )
